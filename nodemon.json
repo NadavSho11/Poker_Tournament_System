@@ -1,0 +1,7 @@
+{
+    "watch": ["server"],
+    "ignore": ["server/data/players.json", "server/data/blinds.json", "server/data/prizes.json"],
+    "ext": "js,json",
+    "exec": "node server/server.js"
+  }
+  

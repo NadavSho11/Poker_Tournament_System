@@ -1,0 +1,17 @@
+# תיקיית הספריות של Node
+node_modules/
+
+# קבצי לוגים אוטומטיים של npm או שגיאות
+*.log
+
+# קבצי מערכת/עורך
+.DS_Store
+Thumbs.db
+
+# סביבות פיתוח (אם אתה משתמש ב-VSCode או WebStorm)
+.vscode/
+.idea/
+
+# קבצי מערכת (למקרה שאתה על Windows/Mac)
+*.swp
+*.swo

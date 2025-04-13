@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>לובי טורניר פוקר</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+
+<body>
+  <div class="dashboard-container">
+    <div class="lobby-section">
+      <h1>🃏 טורניר הפוקר - לובי</h1>
+
+      <div class="info">
+        <p>🕒 סטטוס: <span id="status">לפני התחלה</span></p>
+        <p>📅 תאריך: יום ראשון ב-16:00</p>
+        <p>👥 שחקנים רשומים: <span id="players-count">12/14</span></p>
+        <p>🔄 Re-buy פתוח עד: 19:00</p>
+        <p>
+          🏁 שלב נוכחי: <span id="current-level">--</span> מתוך
+          <span id="total-levels">--</span>
+        </p>
+        <p>💸 בליינדים: <span id="blinds-display">-- / --</span></p>
+
+        <p>⏱️ טיימר: <span id="timer">--:--</span>
+          <button id="toggle-timer-btn" onclick="toggleTimer()">עצור</button>
+        </p>
+      </div>
+
+      <h2>🧍‍♂️ שחקנים</h2>
+      <table id="players-table" border="1" style="margin: auto; direction: rtl">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>שם</th>
+            <th>סטטוס</th>
+            <th>צ'יפים</th>
+            <th>עדכון צ'יפים</th>
+            <th>Re-buy</th>
+            <th>הדח</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- שחקנים ייכנסו לכאן -->
+        </tbody>
+      </table>
+
+      <div class="buttons">
+        <button id="start-btn">התחל טורניר</button>
+        <button id="next-level-btn" disabled>מעבר לשלב הבא</button>
+        <button id="finish-btn" style="display: none">סיים טורניר</button>
+        <div id="final-stats" style="display: none; margin-top: 30px;">
+          <h2>📈 סטטיסטיקות סיום</h2>
+          <table border="1" style="margin: auto; direction: rtl;">
+            <thead>
+              <tr>
+                <th>מקום</th>
+                <th>שם</th>
+                <th>צ'יפים</th>
+                <th>סטטוס</th>
+                <th>פרס</th>
+              </tr>
+            </thead>
+            <tbody id="final-stats-body">
+              <!-- נתונים ייכנסו לכאן -->
+            </tbody>
+          </table>
+        </div>
+        <button id="download-excel-btn" style="display: none; margin-top: 10px;">📥 הורד ל-Excel</button>      
+        <button id="reset-btn" style="display: none">אפס טורניר</button>
+        <button id="reset-players-btn">איפוס שחקנים</button>
+      </div>
+    </div>
+
+    <div class="rules-section">
+      <div class="rules-box">
+        <h2>📘 חוקים</h2>
+        <ul>
+          <li>כניסה = 150</li>
+          <li>כניסה כוללת נשנושים ושתיה קלה</li>
+          <li>רי באיי = 100</li>
+          <li>ריבאיי אפשרי עד 19:00</li>
+          <li>כניסה = 15,000 צ'יפים</li>
+          <li>ריבאיי = 11,000 צ'יפים</li>
+          <li>תשלום מראש לקבוצת פייבוקס בלבד</li>
+          <li>בליינדים: ראה טבלת בליינדים</li>
+          <li>מותר לבצע כל סוג של דיל בשולחן</li>
+          <li>אסור לדבר ולייעץ בידיים שאתם לא חלק מהן</li>
+          <li>קבלת פתקי מיסטרי - 1 לשחקן בלבד</li>
+          <li>טעות דילר לפני פלופ – מחלקים מחדש</li>
+          <li>אמרת - שילמת.</li>
+          <li>כל אחד יכול לקרוא "שעון"</li>
+          <li>2 צ'יפים של אקסטרא טיים לכל שחקן</li>
+          <li>הצבעה תכריע במחלוקות</li>
+        </ul>
+      </div>
+    </div>
+    <div class="prizes-section">
+      <h2>🏆 טבלת פרסים</h2>
+      <table id="prizes-table" border="1" style="margin: auto; direction: rtl">
+        <thead>
+          <tr>
+            <th>מקום</th>
+            <th>פרס</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- יוזן על ידי JS -->
+        </tbody>
+      </table>
+      <br />
+      <div class="bonus-box">
+        <h2>🎯 בונוסים</h2>
+        <ul>
+          <li>איחור מעל 20 דקות – מינוס 10</li>
+          <li>העפת שחקן – פתק מיסטרי</li>
+          <li>שובר אסים באול-אין פריפלופ – 25</li>
+          <li>היד הכי חזקה בטורניר – 30</li>
+          <li>יד עם 7-2 – 20</li>
+          <li>פול האוס על פול האוס – 20</li>
+        </ul>
+      </div>
+      <div class="blinds-table-box">
+        <h2>📊 טבלת שלבים</h2>
+        <table id="blinds-table" border="1" style="margin: auto; direction: rtl">
+          <thead>
+            <tr>
+              <th>שלב</th>
+              <th>בליינד קטן</th>
+              <th>בליינד גדול</th>
+              <th>משך (דק')</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- יוזן דינמית -->
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <audio id="alert-sound" src="sounds/alert.mp3" preload="auto"></audio>
+</body>
+
+</html>

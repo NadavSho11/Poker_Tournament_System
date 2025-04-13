@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "נדב",
+    "chips": 15000,
+    "status": "active"
+  },
+  {
+    "id": 2,
+    "name": "רון",
+    "chips": 15000,
+    "status": "active"
+  },
+  {
+    "id": 3,
+    "name": "דורון",
+    "chips": 15000,
+    "status": "active"
+  },
+  {
+    "id": 4,
+    "name": "גלר",
+    "chips": 15000,
+    "status": "active"
+  },
+  {
+    "id": 5,
+    "name": "חג'ג'",
+    "chips": 15000,
+    "status": "active"
+  },
+  {
+    "id": 6,
+    "name": "בנג'ו",
+    "chips": 15000,
+    "status": "active"
+  },
+  {
+    "id": 7,
+    "name": "כרמלי",
+    "chips": 15000,
+    "status": "active"
+  },
+  {
+    "id": 8,
+    "name": "מייקל",
+    "chips": 15000,
+    "status": "active"
+  },
+  {
+    "id": 9,
+    "name": "סער",
+    "chips": 15000,
+    "status": "active"
+  },
+  {
+    "id": 10,
+    "name": "עידן",
+    "chips": 15000,
+    "status": "active"
+  },
+  {
+    "id": 11,
+    "name": "ביופורד",
+    "chips": 15000,
+    "status": "active"
+  },
+  {
+    "id": 12,
+    "name": "חבר של סער",
+    "chips": 15000,
+    "status": "active"
+  }
+]
