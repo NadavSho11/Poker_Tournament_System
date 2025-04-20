@@ -8,7 +8,7 @@
   {
     "id": 2,
     "name": "רון",
-    "chips": 15000,
+    "chips": 12000,
     "status": "active"
   },
   {
@@ -25,7 +25,7 @@
   },
   {
     "id": 5,
-    "name": "חג'ג'",
+    "name": "ראם",
     "chips": 15000,
     "status": "active"
   },
@@ -55,19 +55,25 @@
   },
   {
     "id": 10,
-    "name": "עידן",
+    "name": "רפאל",
     "chips": 15000,
     "status": "active"
   },
   {
     "id": 11,
-    "name": "ביופורד",
+    "name": "אילן",
     "chips": 15000,
     "status": "active"
   },
   {
     "id": 12,
-    "name": "חבר של סער",
+    "name": "רועי",
+    "chips": 15000,
+    "status": "active"
+  },
+  {
+    "id": 13,
+    "name": "עומר",
     "chips": 15000,
     "status": "active"
   }

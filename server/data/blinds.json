@@ -14,7 +14,7 @@
   {
     "level": 3,
     "sb": 200,
-    "bb": 300,
+    "bb": 400,
     "duration": 30
   },
   {
@@ -25,48 +25,60 @@
   },
   {
     "level": 5,
-    "sb": 400,
-    "bb": 800,
-    "duration": 75
+    "sb": 0,
+    "bb": 0,
+    "duration": 45
   },
   {
     "level": 6,
+    "sb": 400,
+    "bb": 800,
+    "duration": 30
+  },
+  {
+    "level": 7,
     "sb": 500,
     "bb": 1000,
     "duration": 30
   },
   {
-    "level": 7,
+    "level": 8,
     "sb": 750,
     "bb": 1500,
     "duration": 30
   },
   {
-    "level": 8,
+    "level": 9,
     "sb": 1000,
     "bb": 2000,
     "duration": 30
   },
   {
-    "level": 9,
-    "sb": 1300,
-    "bb": 2600,
-    "duration": 60
+    "level": 10,
+    "sb": 0,
+    "bb": 0,
+    "duration": 30
   },
   {
-    "level": 10,
+    "level": 11,
+    "sb": 1300,
+    "bb": 2600,
+    "duration": 30
+  },
+  {
+    "level": 12,
     "sb": 1800,
     "bb": 3600,
     "duration": 30
   },
   {
-    "level": 11,
+    "level": 13,
     "sb": 2500,
     "bb": 5000,
     "duration": 30
   },
   {
-    "level": 12,
+    "level": 14,
     "sb": 3500,
     "bb": 7000,
     "duration": 0

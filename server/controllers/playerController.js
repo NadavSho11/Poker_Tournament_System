@@ -37,7 +37,7 @@ exports.rebuyPlayer = (req, res) => {
       return res.status(403).json({ success: false, message: 'עבר הזמן לביצוע Re-buy' });
     }
 
-    player.chips += 10000;
+    player.chips += 12000;
 
     fs.writeFileSync(playersPath, JSON.stringify(players, null, 2), 'utf8');
     return res.json({ success: true });
@@ -56,8 +56,8 @@ exports.rebuyPlayer = (req, res) => {
     const playersPath = path.join(__dirname, '../data/players.json');
   
     const originalPlayers = [
-      "נדב", "רון", "דורון", "גלר", "חג'ג'", "בנג'ו",
-      "כרמלי", "מייקל", "סער", "עידן", "ביופורד", "חבר של סער"
+      "נדב", "רון", "דורון", "גלר", "ראם", "בנג'ו",
+      "כרמלי", "מייקל", "סער", "רפאל", "אילן", "רועי","עומר"
     ].map((name, i) => ({
       id: i + 1,
       name,
